@@ -1,0 +1,42 @@
+/* assets/css/faq.css */
+.faq {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: inherit;
+  }
+  
+  .faq__item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .faq__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    color: inherit;
+    margin: 0;
+  }
+  
+  .faq__description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: inherit;
+    display: block;
+  }
+  
+  .faq__description ul {
+    padding-left: 1.2rem;
+  }
+  
+  .faq__description li {
+    margin-bottom: 0.5rem;
+  }
+  
