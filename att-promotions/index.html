@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Exclusive AT&T 5G+ Upgrade Offer in Keizer</title>
-    <meta name="description" content="Exclusive AT&T 5G+ upgrade offer in your Keizer neighborhood! Get the latest iPhone or Samsung Galaxy for free with trade-in. Unlimited data, hotspot, and more with AT&T.">
+    <title>AT&T 5G+ Upgrade Offer - Your Local Rep Rodrigue</title>
+    <meta name="description" content="Exclusive AT&T 5G+ upgrade offer in your Keizer neighborhood! Meet Rodrigue, your local AT&T rep. Get the latest iPhone or Samsung Galaxy for free with trade-in up to $800. Unlimited data, hotspot, and more.">
 
-    <link rel="canonical" href="your-landing-page-url.html">
+    <link rel="canonical" href="your-qr-code-landing-page-url.html">
     <link rel="icon" href="https://www.att.com/favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.gstatic.com/">
@@ -72,7 +72,6 @@
             --syntax-highlighting-background: #22222a;
         }
 
-
         /* Global Styles */
         body {
             font-family: 'Lato', sans-serif;
@@ -102,11 +101,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            flex-wrap: wrap;
         }
 
         .logo img {
-            height: 35px; /* Adjusted for better proportion */
+            height: 35px;
         }
 
         nav ul {
@@ -114,7 +113,7 @@
             padding: 0;
             margin: 0;
             display: flex;
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            flex-wrap: wrap;
             justify-content: center;
         }
 
@@ -133,16 +132,54 @@
             color: var(--link-color-hover);
         }
 
+        /* Hero / Introduction Section */
+        .hero-section {
+            padding: 60px 0;
+            text-align: center;
+            background-color: var(--primary-color); /* Use primary color for welcoming feel */
+            color: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        .hero-section h2 {
+            font-size: 1.6em;
+            color: var(--dark-blue);
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        .hero-section p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--dark);
+        }
+        .hero-section .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
         /* Main Offer Section */
         .offer-section {
             padding: 80px 0;
             text-align: center;
             background-color: var(--background-color);
-            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://via.placeholder.com/1600x600/0038ff/fff?text=AT%26T+5G+Background'); /* Placeholder - replace with actual background */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://via.placeholder.com/1600x600/0038ff/fff?text=AT%26T+5G+Background');
             background-size: cover;
             background-position: center;
             position: relative;
-            overflow: hidden; /* For any potential background element clipping */
+            overflow: hidden;
         }
 
         .offer-section h1 {
@@ -216,6 +253,11 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
+        .highlight-text {
+            color: var(--secondary-color); /* A contrasting color for emphasis */
+            font-weight: 700;
+        }
+
         /* Qualifying Questions Section */
         .qualifying-questions {
             padding: 60px 0;
@@ -238,6 +280,43 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        .qualifying-questions ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: left;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: var(--background-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .qualifying-questions ul li {
+            font-size: 1.15em;
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .qualifying-questions ul li:last-child {
+            margin-bottom: 0;
+        }
+        .qualifying-questions ul li::before {
+            content: "\f05a"; /* info-circle icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        .qualifying-questions .small-text {
+            font-size: 0.9em;
+            color: var(--gray);
+            margin-top: 10px;
+        }
+
 
         /* Testimonials Section */
         .testimonials-section {
@@ -327,11 +406,11 @@
         .faq-item p {
             font-size: 1.05em;
             color: var(--text-alt-color);
-            display: none; /* Hidden by default */
+            display: none;
             margin-top: 10px;
         }
         .faq-item.active p {
-            display: block; /* Show when active */
+            display: block;
         }
 
         /* Contact Section */
@@ -419,6 +498,13 @@
                 margin-left: 0;
             }
 
+            .hero-section h1 {
+                font-size: 2.2em;
+            }
+            .hero-section h2 {
+                font-size: 1.3em;
+            }
+
             .offer-section {
                 padding: 60px 0;
             }
@@ -453,6 +539,16 @@
         }
 
         @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 1.8em;
+            }
+            .hero-section h2 {
+                font-size: 1.1em;
+            }
+            .hero-section p {
+                font-size: 1em;
+            }
+
             .offer-section h1 {
                 font-size: 1.8em;
             }
@@ -491,66 +587,81 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Pages</a></li>
+                    <li><a href="#welcome">Welcome</a></li>
+                    <li><a href="#offer">Your Offer</a></li>
+                    <li><a href="#qualify">Qualify</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="offer-section">
+        <section class="hero-section" id="welcome">
             <div class="container">
-                <h1>Exclusive AT&T 5G+ Upgrade Offer in Your Neighborhood!</h1>
-                <h2>Upgrade to the latest iPhone 16+ or Samsung S25+ for FREE with trade-in.</h2>
+                <img src="https://via.placeholder.com/120x120/ffc71d/000000?text=Rodrigue" alt="Rodrigue, Your Local AT&T Rep" class="profile-pic">
+                <h1>Hello, Keizer Neighbor! I'm Rodrigue from AT&T.</h1>
+                <h2>Thanks for scanning my flyer! I was just in your neighborhood, sharing some exciting news about AT&T's new 5G+ upgrades.</h2>
+                <p>You might have just seen me on your porch, or perhaps found my flyer. Either way, this page is here to give you all the details on the exclusive offers I mentioned, and how you can get <span class="highlight-text">up to $800</span> for your old phone!</p>
+                <a href="#offer" class="cta-button">See Your Exclusive Local Offer</a>
+            </div>
+        </section>
+
+        ---
+
+        <section class="offer-section" id="offer">
+            <div class="container">
+                <h1>Your Exclusive AT&T 5G+ Upgrade Offer!</h1>
+                <h2>Upgrade to the latest iPhone 16+ or Samsung S25+ for <span class="highlight-text">FREE</span> with trade-in <span class="highlight-text">up to $800!</span></h2>
                 <ul class="offer-list">
-                    <li><i class="fas fa-check-circle"></i> Unlimited talk, text, and data.</li>
-                    <li><i class="fas fa-check-circle"></i> 60GB hotspot included.</li>
-                    <li><i class="fas fa-check-circle"></i> Up to 25% more nationwide coverage.</li>
-                    <li><i class="fas fa-check-circle"></i> Save $50 to $200 on your monthly bill.</li>
-                    <li><i class="fas fa-check-circle"></i> $250 gift card per line when you port to AT&T.</li>
-                    <li><i class="fas fa-check-circle"></i> AT&T buys out your existing contract.</li>
+                    <li><i class="fas fa-check-circle"></i> **Truly Unlimited** talk, text, and data – no more worrying about overages.</li>
+                    <li><i class="fas fa-check-circle"></i> **Massive 60GB hotspot** included – perfect for working from anywhere.</li>
+                    <li><i class="fas fa-check-circle"></i> Enjoy <span class="highlight-text">up to 25% more nationwide coverage</span>, including our lightning-fast 5G+.</li>
+                    <li><i class="fas fa-check-circle"></i> **Potential savings of $50 to $200** on your monthly bill!</li>
+                    <li><i class="fas fa-check-circle"></i> Get a **$250 gift card per line** when you port your number to AT&T!</li>
+                    <li><i class="fas fa-check-circle"></i> **AT&T buys out your existing contract** – switch without breaking the bank!</li>
                 </ul>
-                <a href="#contact" class="cta-button">Schedule Your Free Upgrade Appointment</a>
+                <a href="#contact" class="cta-button">Schedule Your Free Upgrade Appointment with Rodrigue</a>
                 <img src="https://via.placeholder.com/800x450/007bff/ffffff?text=iPhone+16++and+Samsung+S25+" alt="Latest iPhone 16+ and Samsung S25+ smartphones" class="main-image">
             </div>
         </section>
 
         ---
 
-        <section class="qualifying-questions">
+        <section class="qualifying-questions" id="qualify">
             <div class="container">
-                <h2>Ready to Save? Let's See If You Qualify!</h2>
-                <p>Hey! My name is Rodrigue, and I'm in your neighborhood doing customer service. Not sure if you heard this, but AT&T just upgraded your area to 5G+, and they set us out here with some exclusive deals and offers for you.</p>
-                <p>To help us tailor the perfect offer for you, here are a few quick questions:</p>
-                <p><strong>What's your current phone provider?</strong></p>
-                <p><strong>How many lines do you have?</strong></p>
-                <p><strong>Approximately how much do you pay for all lines?</strong></p>
-                <p><strong>Are you Team iPhone or Android?</strong></p>
-                <p>We're excited to show you the massive savings and incredible benefits of AT&T's 5G+!</p>
+                <h2>How to Qualify for Even Better Discounts!</h2>
+                <p>During my visit, I mentioned a few quick questions to help tailor the best possible deal for you. Here's what we look at to unlock those amazing savings:</p>
+                <ul>
+                    <li>**What's your current phone provider?** (e.g., Verizon, T-Mobile, Xfinity Mobile, etc.)</li>
+                    <li>**How many lines do you currently have?** (This helps us calculate your family's total savings!)</li>
+                    <li>**Approximately how much do you pay for all your lines combined per month?** (We love showing people how much less they'll pay with AT&T!)</li>
+                    <li>**Are you Team iPhone or Team Android?** (So we know which brand new FREE phone you'd prefer!)</li>
+                    <li>**Do you have an eligible device to trade in?** (Remember, up to $800 for your old phone!)</li>
+                </ul>
+                <p class="small-text">Answering these helps me find the absolute best rates and deals for your specific situation. Don't worry, it's quick and easy!</p>
+                <a href="#contact" class="cta-button">Connect with Rodrigue to Get Your Personalized Offer!</a>
             </div>
         </section>
 
         ---
 
-        <section class="testimonials-section">
+        <section class="testimonials-section" id="testimonials">
             <div class="container">
-                <h2>What Your Keizer Neighbors Are Saying</h2>
+                <h2>What Your Keizer Neighbors Are Saying About AT&T</h2>
                 <div class="testimonial-grid">
                     <div class="testimonial">
-                        <p>"I was paying so much with Verizon! Rodrigue showed me how I could get a new iPhone and save over $70 a month with AT&T. This 5G+ is blazing fast. Highly recommend!"</p>
+                        <p>"I was paying so much with Verizon! Rodrigue showed me how I could get a new iPhone and save over $70 a month with AT&T. This 5G+ is blazing fast, and the service has been fantastic. Highly recommend!"</p>
                         <cite>- Sarah M., Keizer Resident</cite>
                     </div>
                     <div class="testimonial">
-                        <p>"Switching to AT&T was seamless, and the new Samsung S25+ is incredible. I got it for free with my trade-in, and the coverage here in Keizer is better than ever!"</p>
+                        <p>"Switching to AT&T was seamless, and the new Samsung S25+ is incredible. I got it for free with my trade-in, and the coverage here in Keizer is better than ever. Plus, they handled my old contract!"</p>
                         <cite>- John B., Your Neighbor</cite>
                     </div>
                     <div class="testimonial">
-                        <p>"The $250 gift card per line was a fantastic bonus! Plus, AT&T bought out my old T-Mobile contract, making the switch stress-free. Very happy with the service and the massive savings."</p>
+                        <p>"The $250 gift card per line was a fantastic bonus! Plus, AT&T bought out my old T-Mobile contract, making the switch stress-free. Very happy with the service and the massive savings. Rodrigue was super helpful!"</p>
                         <cite>- Emily K., Local Resident</cite>
                     </div>
                 </div>
@@ -559,24 +670,32 @@
 
         ---
 
-        <section class="faqs-section">
+        <section class="faqs-section" id="faqs">
             <div class="container">
                 <h2>Your Questions Answered</h2>
                 <div class="faq-item">
-                    <h3>What does "FREE with trade-in" really mean? <i class="fas fa-chevron-down"></i></h3>
-                    <p>When you trade in an eligible smartphone in good working condition, you'll receive promotional credits applied over the term of your new device installment plan. These credits effectively cover the cost of your new iPhone 16+ or Samsung S25+, making it free!</p>
+                    <h3>Who was that person at my door? <i class="fas fa-chevron-down"></i></h3>
+                    <p>That was Rodrigue, your friendly local AT&T representative! He's an authorized sales agent specifically assigned to your Keizer neighborhood to share exclusive 5G+ upgrade offers directly with residents. He's here to provide personalized customer service right to your door.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What does "FREE with trade-in up to $800" really mean? <i class="fas fa-chevron-down"></i></h3>
+                    <p>When you trade in an eligible smartphone (which can be several years old!) in good working condition, you'll receive promotional credits applied over the term of your new device installment plan. These credits can be worth up to $800, effectively covering the entire cost of your new iPhone 16+ or Samsung S25+!</p>
                 </div>
                 <div class="faq-item">
                     <h3>What if I'm still under contract with my current provider? <i class="fas fa-chevron-down"></i></h3>
-                    <p>Great news! AT&T often offers contract buyout programs. This means we may cover your early termination fees or remaining device payments from your current provider, making your switch completely worry-free (terms and conditions apply, up to a specified amount).</p>
+                    <p>No problem at all! AT&T offers excellent contract buyout programs. This means we may cover your early termination fees or remaining device payments from your current provider, making your switch completely worry-free and financially easy. Rodrigue can give you specific details.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>What is AT&T 5G+? And why is it important for me? <i class="fas fa-chevron-down"></i></h3>
-                    <p>AT&T 5G+ is our fastest 5G network, utilizing mmWave and C-band spectrum for incredible speeds and capacity. In your upgraded neighborhood, this means faster downloads, smoother streaming, and a more reliable connection, even in crowded areas.</p>
+                    <h3>What is AT&T 5G+ and why is it important for me in Keizer? <i class="fas fa-chevron-down"></i></h3>
+                    <p>AT&T 5G+ is our fastest and highest-capacity 5G network. Your Keizer neighborhood has recently been upgraded to take full advantage of this technology, delivering incredible speeds for downloads, streaming, and gaming, along with a more reliable and responsive connection. It's the future of mobile right at your fingertips!</p>
+                </div>
+                 <div class="faq-item">
+                    <h3>How can I qualify for even better discounts? <i class="fas fa-chevron-down"></i></h3>
+                    <p>The best way to unlock your maximum savings is to speak with Rodrigue directly. By knowing your current provider, number of lines, and approximate monthly bill, he can pinpoint the specific promotions and trade-in values that apply to you, ensuring you get the absolute best deal AT&T has to offer!</p>
                 </div>
                 <div class="faq-item">
                     <h3>How do I schedule my free upgrade appointment with Rodrigue? <i class="fas fa-chevron-down"></i></h3>
-                    <p>It's simple! Just click the "Schedule Your Free Upgrade Appointment" button, and we'll reach out to set up a convenient time for Rodrigue to visit you directly at your home. He'll walk you through everything and ensure you get the best deal.</p>
+                    <p>It's simple and convenient! Just click the "Schedule Your Free Upgrade Appointment" button below, or call/text Rodrigue directly. He'll be happy to arrange a convenient time to visit you at your home again to discuss your options, check your current phones for trade-in value, and get you set up.</p>
                 </div>
             </div>
         </section>
@@ -585,23 +704,23 @@
 
         <section class="contact-section" id="contact">
             <div class="container">
-                <h2>Ready to Upgrade? Schedule Your Free Appointment!</h2>
-                <p>Don't miss out on these exclusive AT&T 5G+ offers available only in your neighborhood.</p>
-                <p>Your local AT&T representative, **Rodrigue**, is here to answer any questions and help you seamlessly switch to AT&T.</p>
+                <h2>Ready to Experience AT&T 5G+ and Start Saving?</h2>
+                <p>Your local AT&T representative, **Rodrigue**, is ready to help you unlock incredible savings and a superior network experience.</p>
+                <p>Don't miss out on these exclusive offers available only in your Keizer neighborhood!</p>
                 <div class="contact-info">
-                    <p><i class="fas fa-phone-alt"></i> Call or Text Rodrigue: <a href="tel:503-555-1234">503-555-1234</a></p>
-                    <p><i class="fas fa-envelope"></i> Email Us: <a href="mailto:rodrigue.att.sales@example.com">rodrigue.att.sales@example.com</a></p>
-                    <p>Or, better yet, click the button below to schedule an appointment for him to come directly to your door!</p>
+                    <p><i class="fas fa-phone-alt"></i> **Call or Text Rodrigue Directly:** <a href="tel:+15035551234">503-555-1234</a></p>
+                    <p><i class="fas fa-envelope"></i> **Email Rodrigue:** <a href="mailto:rodrigue.att.sales@example.com">rodrigue.att.sales@example.com</a></p>
+                    <p><i class="fas fa-calendar-alt"></i> **Or, click below to schedule your FREE personalized home visit!**</p>
                 </div>
-                <a href="#contact" class="cta-button">Schedule Your Free Upgrade Appointment Today!</a>
+                <a href="#contact" class="cta-button">Schedule My Free Upgrade Appointment Now!</a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 AT&T. All Rights Reserved. Offers subject to change.</p>
-            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <p>&copy; 2025 AT&T. All Rights Reserved. Offers subject to change and credit approval. Requires eligible trade-in and new line/port-in.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Accessibility</a></p>
         </div>
     </footer>
 
@@ -611,24 +730,34 @@
             item.addEventListener('click', () => {
                 const parent = item.closest('.faq-item');
                 parent.classList.toggle('active');
+                const content = parent.querySelector('p');
                 const icon = item.querySelector('i');
+
                 if (parent.classList.contains('active')) {
+                    content.style.display = 'block';
                     icon.classList.remove('fa-chevron-down');
                     icon.classList.add('fa-chevron-up');
                 } else {
+                    content.style.display = 'none';
                     icon.classList.remove('fa-chevron-up');
                     icon.classList.add('fa-chevron-down');
                 }
             });
         });
 
-        // Smooth scroll for CTA button
+        // Smooth scroll for internal navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - (document.querySelector('header').offsetHeight + 20), // Adjust for fixed header and some padding
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
