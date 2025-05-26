@@ -252,11 +252,44 @@
             border-radius: 10px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
+        
 
         .highlight-text {
             color: var(--secondary-color); /* A contrasting color for emphasis */
             font-weight: 700;
         }
+
+        .phones {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  perspective: 1000px;
+}
+
+.phone-card {
+  width: 250px;
+  height: 500px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.4s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.phone-card:hover {
+  transform: rotateY(15deg) rotateX(5deg);
+}
+
+.phone-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
         /* Qualifying Questions Section */
         .qualifying-questions {
@@ -636,6 +669,18 @@
 
     <img src="https://via.placeholder.com/800x450/007bff/ffffff?text=iPhone+16++and+Samsung+S25+" alt="Latest iPhone 16+ and Samsung S25+ smartphones" class="main-image">
   </div>
+
+
+            
+            <div class="phones">
+  <div class="phone-card">
+    <img src="https://via.placeholder.com/250x500?text=iPhone+16" alt="iPhone 16" class="phone-image" />
+  </div>
+  <div class="phone-card">
+    <img src="https://via.placeholder.com/250x500?text=Galaxy+S25" alt="Galaxy S25" class="phone-image" />
+  </div>
+</div>
+
 </section>
 
 <!-- Popup Modal -->
