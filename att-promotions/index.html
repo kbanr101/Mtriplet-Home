@@ -278,9 +278,10 @@
   line-height: 1.6;
 }
 
-        .phones {
+  .phones {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
@@ -288,8 +289,10 @@
 }
 
 .phone-card {
-  width: 450px;
-  height: 565px;
+  flex: 1 1 300px;
+  max-width: 90vw;
+  height: auto;
+  aspect-ratio: 9 / 12;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -306,8 +309,9 @@
 .phone-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
+
 
 
         /* Qualifying Questions Section */
