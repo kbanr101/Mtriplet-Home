@@ -611,66 +611,78 @@
             }
 
         
-  .service-request-form {
-    max-width: 600px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background: #f9f9f9;
-    border-radius: 16px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    font-family: 'Inter', sans-serif;
-  }
+  .request-form-section {
+  padding: 4rem 1rem;
+  background: #f9fafb;
+  display: flex;
+  justify-content: center;
+}
 
-  .service-request-form h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: #111827;
-  }
+.form-container {
+  background: white;
+  padding: 2.5rem;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
 
-  .form-field {
-    margin-bottom: 3.2rem;
-  }
+.form-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #111827;
+}
 
-  .form-field label {
-    display: block;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-    color: #374151;
-  }
+.form-group {
+  margin-bottom: 1.5rem;
+}
 
-  .form-field input,
-  .form-field select,
-  .form-field textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
-    background: #fff;
-    font-size: 1rem;
-  }
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
 
-  .form-field textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
 
-  .submit-btn {
-    width: 100%;
-    padding: 0.9rem;
-    background: #2563eb;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
-  }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #6366f1;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
 
-  .submit-btn:hover {
-    background: #1e40af;
-  }
+.form-button {
+  text-align: center;
+}
+
+.form-button button {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-button button:hover {
+  background: #4f46e5;
+}
 }
         
     </style>
