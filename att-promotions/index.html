@@ -257,6 +257,9 @@
   color: #333;
   line-height: 1.6;
 }
+
+
+        
 .phones {
   display: flex;
   flex-wrap: wrap;
@@ -267,9 +270,9 @@
   perspective: 1000px;
 }
  .phone-card {
-  flex: 1 1 300px;
-  max-width: 70vw;
-  aspect-ratio: 9 / 12;
+  flex: 0 0 auto;
+  width: 428.8px; /* Scale down proportionally */
+  height: 284.8px;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -283,8 +286,8 @@
 }
 
 .phone-image {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 80%;
+  max-height: 80%;
   object-fit: contain;
 }
 
