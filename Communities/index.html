@@ -610,6 +610,68 @@
                 margin-top: 30px;
             }
 
+            <style>
+  .service-request-form {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .service-request-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #111827;
+  }
+
+  .form-field {
+    margin-bottom: 1.2rem;
+  }
+
+  .form-field label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 1rem;
+  }
+
+  .form-field textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 0.9rem;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+
+  .submit-btn:hover {
+    background: #1e40af;
+  }
+
         }
     </style>
 </head>
@@ -730,7 +792,60 @@
   <button type="submit">Send Message</button>
 </form>
 
+<form class="service-request-form" action="https://formbold.com/s/6Mg51" method="POST" enctype="multipart/form-data">
+  <h2>Request a Service</h2>
 
+  <div class="form-field">
+    <label for="name">Full Name</label>
+    <input type="text" name="name" id="name" placeholder="John Doe" required>
+  </div>
+
+  <div class="form-field">
+    <label for="email">Email Address</label>
+    <input type="email" name="email" id="email" placeholder="you@example.com" required>
+  </div>
+
+  <div class="form-field">
+    <label for="phone">Phone Number</label>
+    <input type="tel" name="phone" id="phone" placeholder="(123) 456-7890">
+  </div>
+
+  <div class="form-field">
+    <label for="location">Service Location</label>
+    <input type="text" name="location" id="location" placeholder="City or ZIP Code" required>
+  </div>
+
+  <div class="form-field">
+    <label for="service">Type of Service</label>
+    <select name="service" id="service" required>
+      <option value="">-- Select a Service --</option>
+      <option value="Lawn Mowing">Lawn Mowing</option>
+      <option value="Painting">Painting</option>
+      <option value="Cleaning">House Cleaning</option>
+      <option value="Junk Removal">Junk Removal</option>
+      <option value="Pressure Washing">Pressure Washing</option>
+      <option value="Gutter Cleaning">Gutter Cleaning</option>
+      <option value="Moving Help">Moving Help</option>
+      <option value="Handyman Services">Handyman Services</option>
+      <option value="Digital Services">Digital Services</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-field">
+    <label for="details">Additional Details</label>
+    <textarea name="details" id="details" placeholder="Tell us anything else we should know..."></textarea>
+  </div>
+
+  <div class="form-field">
+    <label for="attachment">Upload a Photo or File (Optional)</label>
+    <input type="file" name="attachment" id="attachment">
+  </div>
+
+  <button type="submit" class="submit-btn">Submit Request</button>
+</form>
+
+          
         <section class="qualifying-questions" id="qualify">
             <div class="container">
                 <h2>How to Qualify for Even Better Discounts!</h2>
