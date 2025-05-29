@@ -780,58 +780,72 @@
 </div>
 
 
-<form class="service-request-form" action="https://formbold.com/s/6Mg51" method="POST" enctype="multipart/form-data">
-  <h2>Request a Service</h2>
+<section class="section" id="request">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8-tablet is-6-desktop">
+        <form name="request-service" method="POST" data-netlify="true" class="box" netlify>
+          <h2 class="title is-4 has-text-centered">Request Service</h2>
 
-  <div class="form-field">
-    <label for="name">Full Name</label>
-    <input type="text" name="name" id="name" placeholder="John Doe" required>
+          <div class="field">
+            <label class="label">Full Name</label>
+            <div class="control">
+              <input class="input" type="text" name="name" placeholder="Your full name" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input" type="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Phone</label>
+            <div class="control">
+              <input class="input" type="tel" name="phone" placeholder="(123) 456-7890" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Select a Service</label>
+            <div class="control">
+              <div class="select is-fullwidth">
+                <select name="service" required>
+                  <option value="">-- Choose a Service --</option>
+                  <option value="AT&T Wireless Deals">AT&T Wireless Deals</option>
+                  <option value="Home Internet Setup">Home Internet Setup</option>
+                  <option value="Hemp Wholesale Orders">Hemp Wholesale Orders</option>
+                  <option value="Insurance Savings Review">Insurance Savings Review</option>
+                  <option value="Business Tools & Web Solutions">Business Tools & Web Solutions</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Message (Optional)</label>
+            <div class="control">
+              <textarea class="textarea" name="message" placeholder="Tell us more..."></textarea>
+            </div>
+          </div>
+
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control">
+              <button type="submit" class="button is-warning is-medium">
+                Request Now
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="form-field">
-    <label for="email">Email Address</label>
-    <input type="email" name="email" id="email" placeholder="you@example.com" required>
-  </div>
-
-  <div class="form-field">
-    <label for="phone">Phone Number</label>
-    <input type="tel" name="phone" id="phone" placeholder="(123) 456-7890">
-  </div>
-
-  <div class="form-field">
-    <label for="location">Service Location</label>
-    <input type="text" name="location" id="location" placeholder="City or ZIP Code" required>
-  </div>
-
-  <div class="form-field">
-    <label for="service">Type of Service</label>
-    <select name="service" id="service" required>
-      <option value="">-- Select a Service --</option>
-      <option value="Lawn Mowing">Lawn Mowing</option>
-      <option value="Painting">Painting</option>
-      <option value="Cleaning">House Cleaning</option>
-      <option value="Junk Removal">Junk Removal</option>
-      <option value="Pressure Washing">Pressure Washing</option>
-      <option value="Gutter Cleaning">Gutter Cleaning</option>
-      <option value="Moving Help">Moving Help</option>
-      <option value="Handyman Services">Handyman Services</option>
-      <option value="Digital Services">Digital Services</option>
-      <option value="Other">Other</option>
-    </select>
-  </div>
-
-  <div class="form-field">
-    <label for="details">Additional Details</label>
-    <textarea name="details" id="details" placeholder="Tell us anything else we should know..."></textarea>
-  </div>
-
-  <div class="form-field">
-    <label for="attachment">Upload a Photo or File (Optional)</label>
-    <input type="file" name="attachment" id="attachment">
-  </div>
-
-  <button type="submit" class="submit-btn">Submit Request</button>
-</form>
 
           
         <section class="qualifying-questions" id="qualify">
