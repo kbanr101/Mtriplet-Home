@@ -258,20 +258,9 @@
   line-height: 1.6;
 }
 
-  .phones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  perspective: 1000px;
-}
-
-.phone-card {
+ .phone-card {
   flex: 1 1 300px;
   max-width: 70vw;
-  height: auto;
   aspect-ratio: 9 / 12;
   background: #fff;
   border-radius: 20px;
@@ -280,15 +269,14 @@
   transition: transform 0.4s ease;
   transform-style: preserve-3d;
   cursor: pointer;
-}
-
-.phone-card:hover {
-  transform: rotateY(15deg) rotateX(5deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .phone-image {
-  width: 100%;
-  height: 100%;
+  max-width: 90%;
+  max-height: 90%;
   object-fit: contain;
 }
 
