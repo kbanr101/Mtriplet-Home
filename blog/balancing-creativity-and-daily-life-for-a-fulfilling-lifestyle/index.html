@@ -320,4 +320,1377 @@
             margin-bottom: 20px;
             border: 1px solid var(--border-light);
             border-radius: 8px;
-            font-
+            font-size: 1.1rem;
+            color: var(--dark-bg);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .vehicle-selector input[type="text"]:focus,
+        .vehicle-selector select:focus,
+        .scheduling-form input[type="text"]:focus,
+        .scheduling-form input[type="date"]:focus,
+        .scheduling-form input[type="time"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .vehicle-image-preview {
+            margin-top: 25px;
+            text-align: center;
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px dashed var(--border-light);
+        }
+
+        .vehicle-image-preview img {
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .package-card {
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px var(--shadow-light);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .package-card:hover, .package-card.selected {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px var(--shadow-medium);
+        }
+        .package-card.selected {
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+
+        .package-card h4 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .package-card .price-range {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .package-card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            flex-grow: 1; /* Allow list to take up available space */
+        }
+
+        .package-card ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            position: relative;
+            color: var(--secondary-color);
+        }
+
+        .package-card ul li::before {
+            content: "\f00c"; /* Font Awesome checkmark icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: -25px;
+            top: 2px;
+        }
+
+        .package-card .select-package-btn {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .package-card .select-package-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .add-ons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .add-ons-grid label {
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+            cursor: pointer;
+            background-color: var(--white);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            transition: all 0.2s ease;
+        }
+        .add-ons-grid label:hover {
+            background-color: var(--light-bg);
+            border-color: var(--primary-color);
+        }
+
+        .add-ons-grid input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            accent-color: var(--primary-color);
+        }
+
+        .final-price-summary {
+            margin-top: 30px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark-bg);
+            padding: 20px;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+
+        .final-price-summary #final-price {
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+
+        #book-now-final-btn {
+            width: 100%;
+            margin-top: 30px;
+            padding: 18px;
+            font-size: 1.4rem;
+        }
+
+        .reassurance-msg {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* --- Why Choose Us Section --- */
+        .why-choose-us-section {
+            background-color: var(--light-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 35px;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 4px solid var(--primary-color); /* Emphasize with a subtle border */
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px var(--shadow-medium);
+        }
+
+        .feature-item .icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.7rem;
+            color: var(--dark-bg);
+            margin-bottom: 18px;
+        }
+
+        .feature-item p {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* --- Our Work Section (Before & After, Testimonials) --- */
+        .our-work-section {
+            padding-bottom: 60px;
+        }
+
+        .before-after-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 70px;
+        }
+
+        .before-after-slider {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            cursor: ew-resize;
+            border: 1px solid var(--border-light);
+        }
+
+        .before-after-slider img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .before-image {
+            z-index: 1;
+        }
+
+        .after-image {
+            z-index: 2;
+            clip-path: inset(0 0 0 50%);
+        }
+
+        .slider-handle {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px; /* Thinner line */
+            background-color: var(--white);
+            cursor: ew-resize;
+            z-index: 3;
+            transform: translateX(-50%);
+        }
+
+        .slider-handle::before, .slider-handle::after {
+            content: '';
+            position: absolute;
+            width: 35px; /* Larger handle */
+            height: 35px;
+            background-color: var(--white);
+            border: 4px solid var(--primary-color); /* Thicker border */
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+
+
+        .view-all-btn {
+            display: block;
+            margin: 50px auto 70px auto;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .our-work-section h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: var(--dark-bg);
+        }
+
+        .testimonials-carousel {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap to cards */
+            gap: 30px;
+            padding: 20px 0;
+            -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+        }
+        .testimonials-carousel::-webkit-scrollbar { /* Hide scrollbar for Chrome/Safari/Opera */
+            display: none;
+        }
+
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px var(--shadow-light);
+            flex: 0 0 48%; /* Adjust width for desktop view */
+            max-width: 550px;
+            min-width: 300px; /* Ensure minimum width for smaller cards */
+            text-align: left;
+            position: relative;
+            scroll-snap-align: start; /* Snap point */
+            border-left: 5px solid var(--accent-color); /* Highlight with accent */
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--dark-bg);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .testimonial-card cite {
+            display: block;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-style: normal;
+            font-size: 1.05rem;
+            margin-top: 15px;
+        }
+        .testimonial-card i.fas.fa-quote-left {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2.5rem;
+            color: var(--border-light);
+            opacity: 0.6;
+            z-index: 0;
+        }
+
+        /* --- Services Section --- */
+        .services-section {
+            background-color: var(--light-bg);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 35px;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+        .service-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px var(--shadow-medium);
+        }
+
+        .service-item .icon {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+        }
+
+        .service-item p {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        /* --- Coverage Map Section --- */
+        .coverage-map-section {
+            background-color: var(--white);
+        }
+
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            margin-bottom: 35px;
+            border: 1px solid var(--border-light);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            border: 0;
+        }
+
+        .coverage-text {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--secondary-color);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 70px 0 30px 0;
+        }
+
+        .main-footer a {
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .main-footer a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo img {
+            height: 45px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        .footer-links h4,
+        .footer-contact h4,
+        .footer-social h4 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-contact p {
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-contact i {
+            margin-right: 12px;
+            color: var(--accent-color);
+            font-size: 1.1em;
+        }
+
+        .footer-social a {
+            font-size: 1.8rem;
+            margin-right: 20px;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* --- Animations & Responsiveness --- */
+        .hidden-initially {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .hidden-initially.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 992px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.2rem; }
+            h3 { font-size: 1.6rem; }
+
+            .main-nav .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.98);
+                position: absolute;
+                top: 90px; /* Adjust based on header height */
+                left: 0;
+                padding: 25px 0;
+                box-shadow: 0 5px 15px var(--shadow-light);
+                border-radius: 0 0 10px 10px;
+            }
+
+            .main-nav .nav-links.active {
+                display: flex;
+            }
+
+            .main-nav .nav-links li {
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            .main-nav .nav-links a {
+                font-size: 1.1rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .header-cta {
+                display: none;
+            }
+
+            .hero-section {
+                height: 650px;
+            }
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .trust-indicators {
+                flex-direction: column;
+                gap: 20px;
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+            section h2 {
+                margin-bottom: 50px;
+            }
+
+            .booking-steps .step {
+                padding: 30px;
+            }
+            .packages-grid, .add-ons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .before-after-slider {
+                height: 300px;
+            }
+
+            .testimonials-carousel {
+                scroll-snap-type: x mandatory; /* Ensure snapping on mobile */
+                justify-content: flex-start; /* Align cards to start on mobile */
+            }
+            .testimonial-card {
+                flex: 0 0 95%; /* Almost full width for better readability on small screens */
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-links ul {
+                padding-left: 0;
+            }
+
+            .footer-contact {
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+                display: flex;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.5rem; }
+
+            .hero-section {
+                height: 550px;
+            }
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .trust-indicators {
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+            section h2 {
+                margin-bottom: 40px;
+            }
+            section h2::after {
+                width: 60px;
+            }
+
+            .booking-steps .step {
+                padding: 25px;
+            }
+            .vehicle-selector input, .vehicle-selector select,
+            .scheduling-form input {
+                font-size: 1rem;
+                padding: 12px 15px;
+            }
+
+            .before-after-slider {
+                height: 250px;
+            }
+
+            .map-container iframe {
+                height: 350px;
+            }
+            .coverage-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.3rem; }
+
+            .hero-section {
+                height: 500px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .booking-steps .step h3 {
+                font-size: 1.8rem;
+            }
+
+            .package-card h4 {
+                font-size: 1.4rem;
+            }
+            .package-card .price-range {
+                font-size: 1.2rem;
+            }
+            .package-card ul li {
+                font-size: 0.9rem;
+            }
+
+            .testimonial-card {
+                min-width: 280px; /* Smallest reasonable card size */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="[Your Business Name] Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#why-choose-us">Why Us</a></li>
+                    <li><a href="#our-work">Our Work</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+            <a href="#booking-widget" class="cta-button header-cta">Book Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-media">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="videos/hero-background.mp4" type="video/mp4">
+                    <img src="images/hero-background-fallback.jpg" alt="Pristine Car Detailing">
+                </video>
+            </div>
+            <div class="hero-content container">
+                <h1>Portland's Premier Mobile Auto Detailing.<br>Convenience, Elevated.</h1>
+                <p>Experience showroom-quality care for your vehicle, delivered right to your home or office. We combine eco-friendly solutions with meticulous craftsmanship for an unparalleled finish, every time.</p>
+                <a href="#booking-widget" class="cta-button hero-cta">Get My Instant Quote & Book Now</a>
+                <div class="trust-indicators">
+                    <span><i class="fas fa-star"></i> 5-Star Rated Service</span>
+                    <span><i class="fas fa-leaf"></i> Eco-Friendly Products</span>
+                    <span><i class="fas fa-shield-alt"></i> Fully Insured & Certified</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking-widget" class="booking-widget-section hidden-initially">
+            <div class="container">
+                <h2>How It Works: 3 Simple Steps to a Flawless Ride</h2>
+                <div class="booking-steps">
+                    <div class="step" data-step="1">
+                        <h3>1. Tell Us About Your Vehicle</h3>
+                        <div class="vehicle-selector">
+                            <input type="text" id="vehicle-input" placeholder="e.g., 2023 Tesla Model 3" list="vehicle-suggestions" required>
+                            <datalist id="vehicle-suggestions"></datalist>
+                            <select id="vehicle-condition" required>
+                                <option value="">Select Current Condition</option>
+                                <option value="light-used">Lightly Used (Newer/Well Maintained)</option>
+                                <option value="moderate">Daily Driver (Moderate Dirt/Wear)</option>
+                                <option value="heavy">Needs Deep Restoration (Heavy Dirt/Stains)</option>
+                                <option value="pet-hair">Excessive Pet Hair/Severe Stains</option>
+                            </select>
+                            <div class="vehicle-image-preview">
+                                <img id="selected-vehicle-img" src="images/default-car.png" alt="Selected Vehicle Preview">
+                                <p class="image-placeholder-text">Your vehicle image will appear here.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="2">
+                        <h3>2. Choose Your Perfect Package & Add-ons</h3>
+                        <div id="packages-display" class="packages-grid">
+                            <div class="package-card placeholder">
+                                <h4>Sparkle</h4>
+                                <p class="price-range">Loading...</p>
+                                <ul>
+                                    <li>Exterior hand wash & dry</li>
+                                    <li>Interior vacuum & wipe down</li>
+                                    <li>Window cleaning (in/out)</li>
+                                    <li>Tire dressing</li>
+                                </ul>
+                                <button class="select-package-btn" data-package="sparkle">Select Package</button>
+                            </div>
+                        </div>
+                        <h3>Optional Enhancements</h3>
+                        <div id="add-ons-display" class="add-ons-grid">
+                            <label><input type="checkbox" class="addon-checkbox" data-addon-price="90"> Headlight Restoration (+$90)</label>
+                            <label><input type="checkbox" class="addon-checkbox" data-addon-price="75"> Engine Bay Detail (+$75)</label>
+                            <label><input type="checkbox" class="addon-checkbox" data-addon-price="50"> Heavy Pet Hair Removal (+$50)</label>
+                            <label><input type="checkbox" class="addon-checkbox" data-addon-price="60"> Odor Elimination (+$60)</label>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="3">
+                        <h3>3. Schedule Your Appointment & Confirm</h3>
+                        <div class="scheduling-form">
+                            <input type="text" id="service-location" placeholder="Enter your full service address (e.g., 123 Main St, Portland, OR)" required>
+                            <div id="calendar-container">
+                                <p>Select your preferred date:</p>
+                                <input type="date" id="booking-date" required>
+                                <p>Select your preferred time:</p>
+                                <input type="time" id="booking-time" required>
+                            </div>
+                            <p class="estimated-duration">Estimated Service Duration: <span id="duration-value">2.5 hours</span></p>
+                            <div class="final-price-summary">
+                                Your Estimated Total: <span id="final-price">$0.00</span>
+                            </div>
+                            <button id="book-now-final-btn" class="cta-button">Confirm & Book My Detail</button>
+                            <p class="reassurance-msg">No upfront payment required. We'll collect payment upon completion of service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-choose-us" class="why-choose-us-section hidden-initially">
+            <div class="container">
+                <h2>The [Your Business Name] Difference: Elevating Your Vehicle Care</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-leaf icon"></i>
+                        <h3>Eco-Friendly Excellence</h3>
+                        <p>We use only premium, biodegradable products that are safe for your vehicle, your family, and the environment. Achieve a stunning, guilt-free shine.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-truck-moving icon"></i>
+                        <h3>Unrivaled Convenience</h3>
+                        <p>Enjoy a sparkling clean car without lifting a finger. Our fully equipped mobile units bring the detail shop experience directly to your home or office.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-hand-sparkles icon"></i>
+                        <h3>Master Craftsmanship</h3>
+                        <p>Our certified detailing professionals are passionate about perfection. From intricate interior work to flawless paint correction, we deliver unparalleled attention to detail.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-calculator icon"></i>
+                        <h3>Transparent & Personalized Pricing</h3>
+                        <p>No hidden fees, no surprises. Our intelligent system provides an instant, accurate quote tailored to your specific vehicle and chosen services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="our-work" class="our-work-section hidden-initially">
+            <div class="container">
+                <h2>Witness the Transformation: Our Work Speaks For Itself.</h2>
+                <div class="before-after-gallery">
+                    <div class="before-after-slider">
+                        <img class="before-image" src="images/before-car-1.jpg" alt="Car before detailing">
+                        <img class="after-image" src="images/after-car-1.jpg" alt="Car after detailing">
+                        <div class="slider-handle"></div>
+                    </div>
+                    <div class="before-after-slider">
+                        <img class="before-image" src="images/before-interior-1.jpg" alt="Car interior before cleaning">
+                        <img class="after-image" src="images/after-interior-1.jpg" alt="Car interior after cleaning">
+                        <div class="slider-handle"></div>
+                    </div>
+                    <div class="before-after-slider">
+                        <img class="before-image" src="images/before-wheel-1.jpg" alt="Dirty car wheel before detailing">
+                        <img class="after-image" src="images/after-wheel-1.jpg" alt="Clean car wheel after detailing">
+                        <div class="slider-handle"></div>
+                    </div>
+                </div>
+                <button class="cta-button view-all-btn">Explore Our Full Gallery</button>
+                <h3>What Our Valued Customers Are Saying:</h3>
+                <div class="testimonials-carousel">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Simply amazing! My car looks like it just rolled off the showroom floor. The convenience of having them come to my home in Beaverton was perfect."</p>
+                        <cite>- Jessica R., Porsche Macan Owner</cite>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Professional, thorough, and punctual. My older SUV hasn't looked this clean in years! The interior deep clean was incredibly impressive."</p>
+                        <cite>- Michael P., Toyota 4Runner Owner</cite>
+                    </div>
+                     <div class="testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"I can't believe the difference. They transformed my messy family minivan into a pristine, fresh-smelling space. Highly recommend their eco-friendly approach!"</p>
+                        <cite>- Sarah K., Honda Odyssey Owner (Camas, WA)</cite>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Fantastic service from start to finish. The online booking was easy, and the detailers were incredibly meticulous. My truck looks brand new!"</p>
+                        <cite>- David L., Ford F-150 Owner (Portland)</cite>
+                    </div>
+                </div>
+                <a href="reviews.html" class="cta-button view-all-btn">Read All 5-Star Reviews</a>
+            </div>
+        </section>
+
+        <section id="services" class="services-section hidden-initially">
+            <div class="container">
+                <h2>Our Comprehensive Detailing Services</h2>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <i class="fas fa-car-side icon"></i>
+                        <h3>Exterior Detailing</h3>
+                        <p>From gentle hand washes to advanced paint correction and ceramic coatings, we restore your vehicle's exterior to its ultimate shine and protection.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-chair icon"></i>
+                        <h3>Interior Detailing</h3>
+                        <p>Deep vacuuming, steam cleaning, stain removal, leather conditioning, and odor elimination to revitalize your cabin's look and feel.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-sparkles icon"></i>
+                        <h3>Full Detail Packages</h3>
+                        <p>Our all-inclusive packages combine interior and exterior services for a complete, head-to-toe transformation of your vehicle.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-microscope icon"></i>
+                        <h3>Specialty Services</h3>
+                        <p>Beyond the basics, we offer headlight restoration, engine bay cleaning, paint decontamination, and long-lasting ceramic sealants.</p>
+                    </div>
+                </div>
+                <a href="services.html" class="cta-button view-all-btn">Learn More About Our Detailed Services</a>
+            </div>
+        </section>
+
+        <section id="coverage-map" class="coverage-map-section hidden-initially">
+            <div class="container">
+                <h2>Serving Your Neighborhood: Portland & Vancouver Metro Areas</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186350.14729177114!2d-122.90906236968038!3d45.54573177651083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950b0b7da97427%3A0x1c36b9e16dca8c53!2sPortland%2C%20OR!5e0!3m2!1sen!2sus!4v1717904033010!5m2!1sen!2sus" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <p class="coverage-text">Proudly serving the entire **Portland Metro Area**, including Beaverton, Hillsboro, Lake Oswego, Tigard, and the **Vancouver, WA side**, covering areas like Mill Plain, Camas, and Battle Ground. We bring premier detailing directly to you!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <img src="images/logo-footer.png" alt="[Your Business Name] Logo">
+                    <p>Experience the ultimate convenience in car care. We bring perfection to your driveway.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:[Your Phone Number]">[Your Phone Number]</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:[Your Email]">[Your Email]</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Portland & Vancouver Metro</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <a href="[Your Facebook Link]" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="[Your Instagram Link]" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="[Your Yelp Link]" target="_blank" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 [Your Business Name]. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Mobile Navigation Toggle ---
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close nav when a link is clicked (for single-page scroll)
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+
+            // --- Active Nav Link on Scroll ---
+            const sections = document.querySelectorAll('section[id]');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // Adjust offset for fixed header
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.querySelectorAll('a').forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href').includes(current)) {
+                        a.classList.add('active');
+                    }
+                });
+            });
+
+
+            // --- AI-Powered Vehicle Selector & Dynamic Pricing ---
+            const vehicleInput = document.getElementById('vehicle-input');
+            const vehicleSuggestions = document.getElementById('vehicle-suggestions');
+            const vehicleCondition = document.getElementById('vehicle-condition');
+            const selectedVehicleImg = document.getElementById('selected-vehicle-img');
+            const imagePlaceholderText = document.querySelector('.image-placeholder-text');
+            const packagesDisplay = document.getElementById('packages-display');
+            const addOnsDisplay = document.getElementById('add-ons-display');
+            const finalPriceSpan = document.getElementById('final-price');
+            const durationValue = document.getElementById('duration-value');
+
+            // Dummy Vehicle Data (Expanded with more types/sizes for better pricing logic)
+            const vehicleData = {
+                'small sedan': { type: 'Small Sedan', image: 'images/cars/toyota-corolla.jpg', basePrice: { 'light-used': 130, moderate: 160, heavy: 230, 'pet-hair': 280 }, duration: '2 hours' },
+                'mid-size sedan': { type: 'Mid-size Sedan', image: 'images/cars/toyota-camry.jpg', basePrice: { 'light-used': 140, moderate: 170, heavy: 240, 'pet-hair': 290 }, duration: '2.5 hours' },
+                'large sedan': { type: 'Large Sedan', image: 'images/cars/tesla-model3.jpg', basePrice: { 'light-used': 150, moderate: 180, heavy: 250, 'pet-hair': 300 }, duration: '2.5 hours' },
+                'compact suv': { type: 'Compact SUV', image: 'images/cars/honda-hrv.jpg', basePrice: { 'light-used': 155, moderate: 185, heavy: 255, 'pet-hair': 305 }, duration: '2.5 hours' },
+                'small suv': { type: 'Small SUV', image: 'images/cars/honda-crv.jpg', basePrice: { 'light-used': 160, moderate: 190, heavy: 260, 'pet-hair': 310 }, duration: '3 hours' },
+                'mid-size suv': { type: 'Mid-size SUV', image: 'images/cars/bmw-x5.jpg', basePrice: { 'light-used': 180, moderate: 220, heavy: 290, 'pet-hair': 350 }, duration: '3 hours' },
+                'large suv': { type: 'Large SUV', image: 'images/cars/chevy-tahoe.jpg', basePrice: { 'light-used': 200, moderate: 240, heavy: 300, 'pet-hair': 380 }, duration: '3.5 hours' },
+                'pickup truck': { type: 'Pickup Truck', image: 'images/cars/ford-f150.jpg', basePrice: { 'light-used': 200, moderate: 240, heavy: 300, 'pet-hair': 380 }, duration: '3.5 hours' },
+                'minivan': { type: 'Minivan', image: 'images/cars/honda-odyssey.jpg', basePrice: { 'light-used': 190, moderate: 230, heavy: 290, 'pet-hair': 360 }, duration: '3.5 hours' },
+                // You can add '2023 Tesla Model 3': { type: 'Large Sedan', ... } if you want specific models
+            };
+
+            // Dummy Package Data
+            const packages = [
+                { name: 'Sparkle', description: 'Exterior hand wash & dry, interior vacuum & wipe down, window cleaning, tire dressing.', multiplier: 1.0, durationFactor: 1.0 },
+                { name: 'Radiant Glow', description: 'Sparkle package + Wax sealant application, thorough interior wipe down, door jambs cleaned, light stain treatment, air freshener.', multiplier: 1.3, durationFactor: 1.2 },
+                { name: 'Elite Shine', description: 'Radiant Glow + Clay bar decontamination, paint sealant applied, deep interior cleaning (shampoo/steam), leather conditioning, trim restoration.', multiplier: 1.7, durationFactor: 1.5 },
+                { name: 'Ultimate Ceramic Protection', description: 'Elite Shine + Professional 1-year Ceramic Coating application for long-term paint protection and gloss.', multiplier: 2.5, durationFactor: 2.0 }, // Note: Ceramic pricing typically higher, might need fixed price
+            ];
+
+            const addOns = [
+                { name: 'Headlight Restoration', price: 90 },
+                { name: 'Engine Bay Detail', price: 75 },
+                { name: 'Heavy Pet Hair Removal', price: 50 },
+                { name: 'Odor Elimination Treatment', price: 60 },
+                { name: 'Fabric Protection', price: 80 },
+                { name: 'Leather Conditioning (Deep)', price: 40 },
+                // ... more add-ons
+            ];
+
+            let currentBasePrice = 0;
+            let selectedPackageMultiplier = 1.0;
+            let selectedAddOnPrice = 0;
+            let estimatedDurationHours = 0;
+            let selectedVehicleType = null; // To store the type from vehicleData
+
+            function updateVehicleSuggestions() {
+                const input = vehicleInput.value.toLowerCase();
+                vehicleSuggestions.innerHTML = '';
+                if (input.length < 2) return;
+
+                // Simple matching, could be improved for fuzzy matching
+                const suggestions = new Set();
+                Object.keys(vehicleData).forEach(vehicleKey => {
+                    if (vehicleKey.includes(input) || vehicleData[vehicleKey].type.toLowerCase().includes(input)) {
+                        suggestions.add(vehicleData[vehicleKey].type); // Suggest by type for simplicity
+                    }
+                });
+
+                suggestions.forEach(suggestion => {
+                    const option = document.createElement('option');
+                    option.value = suggestion;
+                    vehicleSuggestions.appendChild(option);
+                });
+            }
+
+            function updatePricingAndPackages() {
+                const enteredValue = vehicleInput.value.toLowerCase();
+                const condition = vehicleCondition.value;
+
+                // Find the vehicle based on exact type match for now
+                const vehicle = Object.values(vehicleData).find(v => v.type.toLowerCase() === enteredValue);
+
+                packagesDisplay.innerHTML = '';
+                imagePlaceholderText.style.display = 'block'; // Show placeholder by default
+                selectedVehicleImg.style.display = 'none';    // Hide image by default
+
+                if (vehicle && condition) {
+                    selectedVehicleType = vehicle.type;
+                    currentBasePrice = vehicle.basePrice[condition];
+                    estimatedDurationHours = parseFloat(vehicle.duration.split(' ')[0]);
+
+                    packages.forEach(pkg => {
+                        let calculatedPrice = Math.round(currentBasePrice * pkg.multiplier);
+
+                        // Special handling for Ceramic Pro if its a fixed price or less variable
+                        if (pkg.name === 'Ultimate Ceramic Protection') {
+                            calculatedPrice = 800; // Example fixed high price for ceramic coating
+                            pkg.description = 'Includes full Elite Shine package plus professional, long-lasting 1-year Ceramic Coating application for ultimate gloss & protection.';
+                        }
+
+                        const packageCard = document.createElement('div');
+                        packageCard.classList.add('package-card');
+                        packageCard.innerHTML = `
+                            <h4>${pkg.name}</h4>
+                            <p class="price-range">$${calculatedPrice}${pkg.name === 'Ultimate Ceramic Protection' ? '' : ' - $' + (calculatedPrice + 50)}</p>
+                            <ul>
+                                ${pkg.description.split(', ').map(item => `<li>${item.trim()}</li>`).join('')}
+                            </ul>
+                            <button class="select-package-btn" data-package="${pkg.name.toLowerCase().replace(/\s/g, '-')}" data-price="${calculatedPrice}" data-duration-factor="${pkg.durationFactor}">Select Package</button>
+                        `;
+                        packagesDisplay.appendChild(packageCard);
+                    });
+
+                    selectedVehicleImg.src = vehicle.image;
+                    selectedVehicleImg.alt = `Image of a ${vehicle.type}`;
+                    selectedVehicleImg.style.display = 'block'; // Show image
+                    imagePlaceholderText.style.display = 'none'; // Hide placeholder
+
+                    document.querySelectorAll('.select-package-btn').forEach(button => {
+                        button.addEventListener('click', (e) => {
+                            document.querySelectorAll('.package-card').forEach(card => card.classList.remove('selected'));
+                            e.target.closest('.package-card').classList.add('selected');
+
+                            const pkgName = e.target.dataset.package;
+                            const selectedPkg = packages.find(p => p.name.toLowerCase().replace(/\s/g, '-') === pkgName);
+                            selectedPackageMultiplier = selectedPkg.multiplier;
+
+                            // Recalculate duration based on the selected package's duration factor
+                            estimatedDurationHours = parseFloat(vehicle.duration.split(' ')[0]) * parseFloat(selectedPkg.durationFactor);
+                            calculateTotalPrice();
+                        });
+                    });
+
+                    // Auto-select the first package by default
+                    const firstPackageButton = document.querySelector('.select-package-btn');
+                    if (firstPackageButton) {
+                        firstPackageButton.click();
+                    }
+
+                } else {
+                    packagesDisplay.innerHTML = '<p>Please enter your vehicle type and select its current condition to see packages.</p>';
+                    selectedVehicleImg.src = 'images/default-car.png';
+                    imagePlaceholderText.style.display = 'block';
+                    selectedVehicleImg.style.display = 'none';
+                    currentBasePrice = 0;
+                    estimatedDurationHours = 0;
+                    calculateTotalPrice();
+                }
+            }
+
+            function calculateTotalPrice() {
+                let total = (currentBasePrice * selectedPackageMultiplier) + selectedAddOnPrice;
+
+                // Special handling for Ceramic Pro if it's selected and has a fixed high price
+                const selectedPackageCard = document.querySelector('.package-card.selected');
+                if (selectedPackageCard && selectedPackageCard.querySelector('h4').textContent === 'Ultimate Ceramic Protection') {
+                    total = 800 + selectedAddOnPrice; // Assuming 800 is the base for ceramic
+                }
+
+                finalPriceSpan.textContent = `$${total.toFixed(2)}`;
+
+                let hours = Math.floor(estimatedDurationHours);
+                let minutes = Math.round((estimatedDurationHours - hours) * 60);
+                let durationText = `${hours} hour${hours !== 1 ? 's' : ''}`;
+                if (minutes > 0) {
+                    durationText += ` ${minutes} minute${minutes !== 1 ? 's' : ''}`;
+                }
+                durationValue.textContent = durationText;
+            }
+
+            // Populate Add-ons
+            addOnsDisplay.innerHTML = addOns.map(addon => `
+                <label>
+                    <input type="checkbox" class="addon-checkbox" data-addon-price="${addon.price}"> ${addon.name} (+$${addon.price})
+                </label>
+            `).join('');
+
+            // Add-on change listener
+            document.querySelectorAll('.addon-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    selectedAddOnPrice = 0;
+                    document.querySelectorAll('.addon-checkbox:checked').forEach(checkedAddon => {
+                        selectedAddOnPrice += parseFloat(checkedAddon.dataset.addonPrice);
+                    });
+                    calculateTotalPrice();
+                });
+            });
+
+            vehicleInput.addEventListener('input', updateVehicleSuggestions);
+            // Use change event to trigger update after user selects from datalist or moves focus
+            vehicleInput.addEventListener('change', updatePricingAndPackages);
+            vehicleCondition.addEventListener('change', updatePricingAndPackages);
+
+            // Initial call to set up the form
+            updatePricingAndPackages();
+
+
+            // --- Before & After Slider ---
+            document.querySelectorAll('.before-after-slider').forEach(slider => {
+                const beforeImage = slider.querySelector('.before-image');
+                const afterImage = slider.querySelector('.after-image');
+                const sliderHandle = slider.querySelector('.slider-handle');
+
+                let isDragging = false;
+
+                const updateSlider = (e) => {
+                    const rect = slider.getBoundingClientRect();
+                    let clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    let x = clientX - rect.left;
+                    x = Math.max(0, Math.min(x, rect.width));
+
+                    const percent = (x / rect.width) * 100;
+
+                    afterImage.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+                    sliderHandle.style.left = `${percent}%`;
+                };
+
+                sliderHandle.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    slider.classList.add('dragging');
+                });
+                sliderHandle.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                    slider.classList.add('dragging');
+                    e.preventDefault(); // Prevent scrolling
+                });
+
+                document.addEventListener('mouseup', () => {
+                    isDragging = false;
+                    slider.classList.remove('dragging');
+                });
+                document.addEventListener('touchend', () => {
+                    isDragging = false;
+                    slider.classList.remove('dragging');
+                });
+
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    requestAnimationFrame(() => updateSlider(e));
+                });
+                slider.addEventListener('touchmove', (e) => {
+                    if (!isDragging || !e.touches[0]) return;
+                    requestAnimationFrame(() => updateSlider(e));
+                });
+
+                // Initialize position
+                updateSlider({ clientX: slider.getBoundingClientRect().left + (slider.getBoundingClientRect().width / 2) });
+            });
+
+            // --- Booking System (Simplified) ---
+            const bookingDateInput = document.getElementById('booking-date');
+            const bookingTimeInput = document.getElementById('booking-time');
+            const bookNowFinalBtn = document.getElementById('book-now-final-btn');
+            const serviceLocationInput = document.getElementById('service-location');
+
+            // Set min date to today and max date (e.g., 90 days from now)
+            const today = new Date();
+            const minDate = today.toISOString().split('T')[0];
+            bookingDateInput.setAttribute('min', minDate);
+
+            const maxDate = new Date();
+            maxDate.setDate(today.getDate() + 90); // Allow booking up to 90 days out
+            bookingDateInput.setAttribute('max', maxDate.toISOString().split('T')[0]);
+
+
+            bookNowFinalBtn.addEventListener('click', () => {
+                const vehicle = vehicleInput.value;
+                const condition = vehicleCondition.value;
+                const selectedPackageElement = document.querySelector('.package-card.selected h4');
+                const selectedPackage = selectedPackageElement ? selectedPackageElement.textContent : 'No package selected';
+                const selectedAddons = Array.from(document.querySelectorAll('.addon-checkbox:checked')).map(cb => cb.parentNode.textContent.trim());
+                const date = bookingDateInput.value;
+                const time = bookingTimeInput.value;
+                const location = serviceLocationInput.value;
+                const finalPrice = finalPriceSpan.textContent;
+
+                if (!vehicle || !condition || !selectedPackageElement || !date || !time || !location) {
+                    alert('Please ensure all required booking details are filled: Vehicle Type, Condition, Package, Date, Time, and your Service Location.');
+                    return;
+                }
+
+                // In a real application, you would send this data to a backend server
+                // for actual booking, payment processing, and confirmation.
+                // For a static GitHub Pages site, this acts as a confirmation dialog.
+
+                const confirmationMessage = `
+                Booking Details Summary:
+                Vehicle Type: ${vehicle} (${condition})
+                Selected Package: ${selectedPackage}
+                Add-ons: ${selectedAddons.length > 0 ? selectedAddons.join(', ') : 'None'}
+                Preferred Date: ${date}
+                Preferred Time: ${time}
+                Service Location: ${location}
+                Estimated Total: ${finalPrice}
+                Estimated Duration: ${durationValue.textContent}
+
+                Thank you for booking with [Your Business Name]! We will contact you shortly via email or phone to confirm your appointment and finalize any details.
+                `;
+
+                alert(confirmationMessage);
+
+                // Optional: Clear form or redirect
+                // window.location.href = 'thank-you.html';
+            });
+
+            // --- Smooth scrolling for anchor links ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = document.querySelector('.main-header').offsetHeight; // Account for fixed header
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // --- Section visibility for animations (basic Intersection Observer) ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2 // Trigger when 20% of the section is visible
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                if (section.id !== 'hero') { // Exclude hero section from this animation as it's visible initially
+                    section.classList.add('hidden-initially');
+                    sectionObserver.observe(section);
+                }
+            });
+
+            // --- Add placeholder text for vehicle image ---
+            if (selectedVehicleImg.src.includes('default-car.png') && imagePlaceholderText) {
+                imagePlaceholderText.style.display = 'block';
+                selectedVehicleImg.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
