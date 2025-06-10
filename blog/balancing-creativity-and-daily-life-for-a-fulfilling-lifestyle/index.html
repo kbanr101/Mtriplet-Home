@@ -8,27 +8,28 @@
 
     <link rel="icon" href="images/favicon.png" type="image/png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* Basic Resets & Global Styles */
+        /* --- Variables & Base Styles --- */
         :root {
-            --primary-color: #007bff; /* Example: Blue for CTAs */
-            --secondary-color: #6c757d; /* Example: Grey for secondary text */
-            --accent-color: #28a745; /* Example: Green for eco-friendly or success */
-            --text-dark: #343a40;
-            --text-light: #f8f9fa;
-            --bg-light: #ffffff;
-            --bg-dark: #212529;
-            --border-color: #e9ecef;
+            --primary-color: #3B82F6; /* A clean blue */
+            --secondary-color: #6B7280; /* Darker grey for text */
+            --accent-color: #10B981; /* A fresh green */
+            --dark-bg: #1F2937; /* Dark charcoal */
+            --light-bg: #F9FAFB; /* Off-white for sections */
+            --white: #FFFFFF;
+            --border-light: #E5E7EB;
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
 
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Open Sans', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Roboto', sans-serif;
         }
 
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -41,14 +42,16 @@
         body {
             font-family: var(--font-body);
             line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
+            color: var(--secondary-color);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px;
         }
 
         a {
@@ -63,9 +66,15 @@
 
         h1, h2, h3, h4 {
             font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--dark-bg);
             margin-bottom: 1rem;
-            color: var(--text-dark);
         }
+
+        h1 { font-size: 3.8rem; line-height: 1.1; }
+        h2 { font-size: 2.8rem; line-height: 1.2; }
+        h3 { font-size: 1.8rem; }
+        h4 { font-size: 1.3rem; }
 
         p {
             margin-bottom: 1rem;
@@ -74,29 +83,32 @@
         .cta-button {
             display: inline-block;
             background-color: var(--primary-color);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
+            color: var(--white);
+            padding: 14px 30px;
+            border-radius: 8px;
             text-transform: uppercase;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 15px var(--shadow-light);
         }
 
         .cta-button:hover {
             background-color: var(--accent-color);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px var(--shadow-medium);
         }
 
-        /* Header & Navigation */
+        /* --- Header & Navigation --- */
         .main-header {
-            background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent */
-            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 18px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px var(--shadow-light);
         }
 
         .main-header .container {
@@ -106,7 +118,8 @@
         }
 
         .logo img {
-            height: 50px; /* Adjust as needed */
+            height: 55px;
+            display: block;
         }
 
         .main-nav .nav-links {
@@ -115,42 +128,61 @@
         }
 
         .main-nav .nav-links li {
-            margin-left: 30px;
+            margin-left: 40px;
         }
 
         .main-nav .nav-links a {
-            color: var(--text-dark);
+            color: var(--dark-bg);
             font-weight: 600;
-            transition: color 0.3s ease;
+            padding: 5px 0;
+            position: relative;
         }
 
-        .main-nav .nav-links a:hover {
-            color: var(--primary-color);
+        .main-nav .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .main-nav .nav-links a:hover::after,
+        .main-nav .nav-links a.active::after {
+            width: 100%;
         }
 
         .header-cta {
-            margin-left: 20px;
+            margin-left: 25px;
         }
 
         .menu-toggle {
-            display: none; /* Hidden on desktop */
+            display: none;
             background: none;
             border: none;
-            font-size: 24px;
+            font-size: 28px;
             cursor: pointer;
-            color: var(--text-dark);
+            color: var(--dark-bg);
+            padding: 5px;
+            transition: color 0.3s ease;
+        }
+        .menu-toggle:hover {
+            color: var(--primary-color);
         }
 
-        /* Hero Section */
+        /* --- Hero Section --- */
         .hero-section {
             position: relative;
-            height: 700px; /* Adjust height as needed */
+            height: 800px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-light);
+            color: var(--white);
             text-align: center;
             overflow: hidden;
+            background-color: var(--dark-bg); /* Fallback background */
         }
 
         .hero-media {
@@ -167,89 +199,115 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.5); /* Darken video/image for text readability */
+            filter: brightness(0.4); /* Darken video/image for text readability */
+            transform: scale(1.05); /* Slight scale for visual pop */
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 900px;
+            padding: 20px;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
-            color: white;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            font-size: 4.5rem;
+            color: var(--white);
+            margin-bottom: 25px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.3);
         }
 
         .hero-content p {
-            font-size: 1.25rem;
-            margin-bottom: 40px;
+            font-size: 1.35rem;
+            margin-bottom: 50px;
             color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .trust-indicators {
-            margin-top: 30px;
+            margin-top: 40px;
             display: flex;
             justify-content: center;
-            gap: 30px;
-            font-size: 0.9rem;
+            gap: 40px;
+            font-size: 1.1rem;
             font-weight: 600;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
+            flex-wrap: wrap;
+        }
+
+        .trust-indicators span {
+            display: flex;
+            align-items: center;
         }
 
         .trust-indicators i {
-            margin-right: 8px;
+            margin-right: 10px;
             color: var(--accent-color);
+            font-size: 1.3em;
         }
 
-
-        /* Section Styling (General) */
+        /* --- General Section Styling --- */
         section {
-            padding: 80px 0;
-            background-color: var(--bg-light);
+            padding: 100px 0;
+            background-color: var(--white);
+            position: relative; /* For animations */
         }
 
-        section:nth-of-type(even) { /* Alternate background for sections */
-            background-color: #f4f7f6;
+        section:nth-of-type(even) {
+            background-color: var(--light-bg);
         }
 
         section h2 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+            color: var(--dark-bg);
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 20px auto 0 auto;
+            border-radius: 2px;
         }
 
-        /* Booking Widget Section */
+        /* --- Booking Widget Section --- */
         .booking-widget-section {
-            background-color: var(--bg-light);
-            padding: 60px 0;
-            text-align: center;
+            padding: 80px 0;
         }
 
         .booking-steps {
             display: flex;
             flex-direction: column;
-            gap: 40px;
-            max-width: 800px;
+            gap: 50px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .booking-steps .step {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px var(--shadow-light);
             text-align: left;
-            border-top: 5px solid var(--primary-color);
+            border-top: 6px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .booking-steps .step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px var(--shadow-medium);
         }
 
         .booking-steps .step h3 {
             text-align: center;
             color: var(--primary-color);
-            margin-bottom: 25px;
-            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            letter-spacing: 0.02em;
         }
 
         .vehicle-selector input[type="text"],
@@ -258,1074 +316,8 @@
         .scheduling-form input[type="date"],
         .scheduling-form input[type="time"] {
             width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .vehicle-image-preview {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .vehicle-image-preview img {
-            max-width: 200px;
-            height: auto;
-            border-radius: 5px;
-            border: 1px solid var(--border-color);
-        }
-
-        .packages-grid, .add-ons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
-
-        .package-card {
-            border: 1px solid var(--border-color);
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-light);
             border-radius: 8px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .package-card:hover, .package-card.selected {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* More prominent shadow on selection */
-        }
-
-        .package-card h4 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .package-card .price-range {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-
-        .package-card ul {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 20px;
-            padding-left: 20px;
-        }
-
-        .package-card ul li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            position: relative;
-        }
-
-        .package-card ul li::before {
-            content: "\f00c"; /* Font Awesome checkmark icon */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            color: var(--accent-color);
-            position: absolute;
-            left: -20px;
-            top: 0;
-        }
-
-        .package-card .select-package-btn {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .package-card .select-package-btn:hover {
-            background-color: var(--accent-color);
-        }
-
-        .add-ons-grid label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 1rem;
-            text-align: left; /* Align checkbox text to left */
-        }
-
-        .add-ons-grid input[type="checkbox"] {
-            margin-right: 10px;
-        }
-
-        .final-price-summary {
-            margin-top: 30px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .final-price-summary #final-price {
-            color: var(--primary-color);
-        }
-
-        #book-now-final-btn {
-            width: 100%;
-            margin-top: 20px;
-            padding: 15px;
-            font-size: 1.2rem;
-        }
-
-        .reassurance-msg {
-            font-size: 0.9rem;
-            color: var(--secondary-color);
-            margin-top: 15px;
-        }
-
-        /* Why Choose Us Section */
-        .why-choose-us-section {
-            background-color: #eaf0f0; /* Light background */
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-item {
-            text-align: center;
-            padding: 30px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateY(-8px);
-        }
-
-        .feature-item .icon {
-            font-size: 3.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .feature-item h3 {
-            font-size: 1.6rem;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-        }
-
-        .feature-item p {
-            color: var(--secondary-color);
-            font-size: 0.95rem;
-        }
-
-        /* Our Work Section (Before & After, Testimonials) */
-        .our-work-section {
-            padding-bottom: 40px; /* Adjust for testimonials */
-        }
-
-        .before-after-gallery {
-            display: flex; /* Or grid for multiple rows */
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .before-after-slider {
-            position: relative;
-            width: 100%; /* Adjust for desired size */
-            max-width: 500px; /* Example max width */
-            height: 300px; /* Example height */
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            cursor: ew-resize; /* For horizontal slider */
-        }
-
-        .before-after-slider img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .before-image {
-            z-index: 1;
-        }
-
-        .after-image {
-            z-index: 2;
-            clip-path: inset(0 0 0 50%); /* Start at 50% */
-        }
-
-        .slider-handle {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background-color: white;
-            cursor: ew-resize;
-            z-index: 3;
-            transform: translateX(-50%);
-        }
-
-        .slider-handle::before, .slider-handle::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background-color: white;
-            border: 3px solid var(--primary-color);
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-
-        .view-all-btn {
-            display: block;
-            margin: 40px auto 60px auto;
-        }
-
-        .testimonials-carousel {
-            display: flex; /* Will use JS for carousel behavior */
-            overflow-x: hidden; /* Hide scrollbar for carousel effect */
-            gap: 30px;
-            justify-content: center; /* Center if few items */
-            padding: 20px 0;
-        }
-
-        .testimonial-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-            flex: 0 0 45%; /* Adjust width for desktop view, will be 100% on mobile */
-            max-width: 500px;
-            text-align: left;
-            position: relative;
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-        }
-
-        .testimonial-card cite {
-            display: block;
-            font-weight: 600;
-            color: var(--primary-color);
-            font-style: normal;
-        }
-
-        /* Services Section */
-        .services-section {
-            background-color: #f4f7f6;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .service-item {
-            text-align: center;
-            padding: 30px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-        }
-
-        .service-item .icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .service-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .service-item p {
-            font-size: 0.9rem;
-            color: var(--secondary-color);
-        }
-
-        /* Coverage Map Section */
-        .coverage-map-section {
-            background-color: var(--bg-light);
-        }
-
-        .map-container {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 450px; /* Standard map height */
-            border: 0;
-        }
-
-        .coverage-text {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Footer */
-        .main-footer {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            padding: 60px 0 20px 0;
-        }
-
-        .main-footer a {
-            color: var(--text-light);
-        }
-
-        .main-footer a:hover {
-            color: var(--primary-color);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo img {
-            height: 40px;
-            margin-bottom: 15px;
-        }
-
-        .footer-logo p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .footer-links h4,
-        .footer-contact h4,
-        .footer-social h4 {
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-contact p {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-
-        .footer-contact i {
-            margin-right: 10px;
-            color: var(--primary-color);
-        }
-
-        .footer-social a {
-            font-size: 1.5rem;
-            margin-right: 15px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            color: var(--primary-color);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .main-nav .nav-links {
-                display: none; /* Hide desktop nav */
-                flex-direction: column;
-                width: 100%;
-                background-color: rgba(255, 255, 255, 0.98);
-                position: absolute;
-                top: 80px; /* Adjust based on header height */
-                left: 0;
-                padding: 20px 0;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
-
-            .main-nav .nav-links.active {
-                display: flex; /* Show when active */
-            }
-
-            .main-nav .nav-links li {
-                margin: 10px 0;
-                text-align: center;
-            }
-
-            .menu-toggle {
-                display: block; /* Show menu icon */
-            }
-
-            .header-cta {
-                display: none; /* Hide header CTA on smaller screens if desired */
-            }
-
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-
-            .trust-indicators {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .booking-steps .step {
-                padding: 20px;
-            }
-
-            .packages-grid, .add-ons-grid {
-                grid-template-columns: 1fr; /* Stack packages on mobile */
-            }
-
-            .testimonial-card {
-                flex: 0 0 90%; /* Make testimonials wider on mobile */
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-links ul, .footer-contact {
-                padding-left: 0;
-            }
-
-            .footer-social {
-                justify-content: center;
-                display: flex;
-            }
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 60px 0;
-            }
-            section h2 {
-                font-size: 2rem;
-                margin-bottom: 40px;
-            }
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            .hero-content p {
-                font-size: 1rem;
-            }
-            .feature-item .icon {
-                font-size: 3rem;
-            }
-            .before-after-slider {
-                height: 250px; /* Adjust height for smaller screens */
-            }
-        }
-
-        /* Basic animation for section progress */
-        .hidden-initially {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .hidden-initially.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-</head>
-<body>
-
-    <header class="main-header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="[Your Business Name] Logo">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#why-choose-us">Why Us</a></li>
-                    <li><a href="#our-work">Our Work</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="menu-toggle" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-            <a href="#booking-widget" class="cta-button header-cta">Book Now</a>
-        </div>
-    </header>
-
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="hero-media">
-                <video autoplay muted loop playsinline class="hero-video">
-                    <source src="videos/hero-background.mp4" type="video/mp4">
-                    <img src="images/hero-background-fallback.jpg" alt="Pristine Car Detailing">
-                </video>
-                </div>
-            <div class="hero-content container">
-                <h1>Portland's Premier Mobile Auto Detailing.<br>Convenience, Redefined.</h1>
-                <p>Get showroom-quality detail for your vehicle, delivered right to your home or office in the Portland Metro Area. Eco-friendly solutions for a pristine finish, every time.</p>
-                <a href="#booking-widget" class="cta-button hero-cta">Get My Instant Quote & Book Now</a>
-                <div class="trust-indicators">
-                    <span><i class="fas fa-star"></i> 5-Star Rated Service</span>
-                    <span><i class="fas fa-leaf"></i> Eco-Friendly Products</span>
-                    <span><i class="fas fa-shield-alt"></i> Fully Insured</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="booking-widget" class="booking-widget-section">
-            <div class="container">
-                <h2>How It Works: 3 Simple Steps to a Flawless Ride</h2>
-                <div class="booking-steps">
-                    <div class="step" data-step="1">
-                        <h3>1. Select Your Vehicle</h3>
-                        <div class="vehicle-selector">
-                            <input type="text" id="vehicle-input" placeholder="e.g., 2023 Tesla Model 3" list="vehicle-suggestions">
-                            <datalist id="vehicle-suggestions"></datalist>
-                            <select id="vehicle-condition">
-                                <option value="">Select Current Condition</option>
-                                <option value="light-used">Lightly Used (Newer/Maintained)</option>
-                                <option value="moderate">Daily Driver (Moderate Dirt/Wear)</option>
-                                <option value="heavy">Needs Deep Restoration (Heavy Dirt/Stains)</option>
-                                <option value="pet-hair">Pet Hair/Heavy Stains</option>
-                            </select>
-                            <div class="vehicle-image-preview">
-                                <img id="selected-vehicle-img" src="images/default-car.png" alt="Selected Vehicle Preview">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="step" data-step="2">
-                        <h3>2. Choose Your Perfect Package</h3>
-                        <div id="packages-display" class="packages-grid">
-                            <div class="package-card placeholder">
-                                <h4>Sparkle</h4>
-                                <p class="price-range">Loading...</p>
-                                <ul>
-                                    <li>Exterior wash</li>
-                                    <li>Interior vacuum & wipe down</li>
-                                    <li>Window cleaning</li>
-                                    <li>Tire shine</li>
-                                </ul>
-                                <button class="select-package-btn" data-package="sparkle">Select Package</button>
-                            </div>
-                            </div>
-                        <h3>Optional Add-ons</h3>
-                        <div id="add-ons-display" class="add-ons-grid">
-                            <label><input type="checkbox" data-addon-price="90"> Headlight Restoration (+$90)</label>
-                            <label><input type="checkbox" data-addon-price="75"> Engine Bay Detail (+$75)</label>
-                            <label><input type="checkbox" data-addon-price="50"> Heavy Pet Hair Removal (+$50)</label>
-                        </div>
-                    </div>
-
-                    <div class="step" data-step="3">
-                        <h3>3. Schedule & Confirm</h3>
-                        <div class="scheduling-form">
-                            <input type="text" id="service-location" placeholder="Enter your Portland Metro Area address">
-                            <div id="calendar-container">
-                                <p>Select a date and time:</p>
-                                <input type="date" id="booking-date">
-                                <input type="time" id="booking-time">
-                            </div>
-                            <p class="estimated-duration">Estimated Duration: <span id="duration-value">X hours</span></p>
-                            <div class="final-price-summary">
-                                Total Price: <span id="final-price">$0.00</span>
-                            </div>
-                            <button id="book-now-final-btn" class="cta-button">Book My Detail</button>
-                            <p class="reassurance-msg">No upfront payment required. Pay upon completion.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="why-choose-us" class="why-choose-us-section">
-            <div class="container">
-                <h2>The [Your Business Name] Difference: Elevating Your Vehicle Care</h2>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-leaf icon"></i>
-                        <h3>Eco-Friendly Excellence</h3>
-                        <p>Green Detailing, Stunning Results. We use only premium, biodegradable products that are safe for your vehicle, your family, and the environment. Shine responsibly.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-truck-moving icon"></i>
-                        <h3>Unrivaled Convenience</h3>
-                        <p>We Come To You. Enjoy a sparkling clean car without leaving your home or office. Our self-sufficient mobile units handle everything.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-tools icon"></i>
-                        <h3>Master Craftsmanship</h3>
-                        <p>Detailing is Our Passion. From meticulous interior restoration to flawless paint protection, our certified professionals deliver an unparalleled level of care and precision.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-dollar-sign icon"></i>
-                        <h3>Transparent & Personalized Pricing</h3>
-                        <p>No Surprises. Our intelligent booking system provides an instant, accurate quote tailored to your specific vehicle and needs.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="our-work" class="our-work-section">
-            <div class="container">
-                <h2>Transformations You Have To See To Believe.</h2>
-                <div class="before-after-gallery">
-                    <div class="before-after-slider">
-                        <img class="before-image" src="images/before-car-1.jpg" alt="Before detailing">
-                        <img class="after-image" src="images/after-car-1.jpg" alt="After detailing">
-                        <div class="slider-handle"></div>
-                    </div>
-                    <div class="before-after-slider">
-                        <img class="before-image" src="images/before-interior-1.jpg" alt="Before interior cleaning">
-                        <img class="after-image" src="images/after-interior-1.jpg" alt="After interior cleaning">
-                        <div class="slider-handle"></div>
-                    </div>
-                    </div>
-                <button class="cta-button view-all-btn">View All Transformations</button>
-                <h3>What Our Customers Say:</h3>
-                <div class="testimonials-carousel">
-                    <div class="testimonial-card">
-                        <p>"Absolutely blown away by the results! My car looks brand new. The convenience of them coming to my office was a game-changer."</p>
-                        <cite>- Sarah L., Tesla Model 3 Owner</cite>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Professional, punctual, and pristine. My SUV hasn't looked this good since I bought it. Highly recommend!"</p>
-                        <cite>- Mark T., Honda CR-V Owner</cite>
-                    </div>
-                    </div>
-                <a href="reviews.html" class="cta-button">Read All 5-Star Reviews</a>
-            </div>
-        </section>
-
-        <section id="services" class="services-section">
-            <div class="container">
-                <h2>Our Comprehensive Detailing Services</h2>
-                <div class="service-grid">
-                    <div class="service-item">
-                        <i class="fas fa-car-side icon"></i>
-                        <h3>Exterior Detailing</h3>
-                        <p>Hand wash, clay bar, waxing, paint sealant, tire dressing, and more for a brilliant shine.</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-car-alt icon"></i>
-                        <h3>Interior Detailing</h3>
-                        <p>Deep cleaning, vacuuming, stain removal, leather conditioning, and odor elimination for a fresh cabin.</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-award icon"></i>
-                        <h3>Full Detail Packages</h3>
-                        <p>Comprehensive interior and exterior cleaning for a total transformation.</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-spray-can icon"></i>
-                        <h3>Specialty Services</h3>
-                        <p>Ceramic Coatings, Headlight Restoration, Engine Bay Cleaning, Paint Correction, and more.</p>
-                    </div>
-                </div>
-                <a href="services.html" class="cta-button">Learn More About Our Services</a>
-            </div>
-        </section>
-
-        <section id="coverage-map" class="coverage-map-section">
-            <div class="container">
-                <h2>Serving Your Neighborhood, Right Here in Portland</h2>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d182512.63704257135!2d-122.95156370000001!3d45.50577935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950b0b7da97427%3A0x1c36b9e160a221f4!2sPortland%2C%20OR!5e0!3m2!1sen!2sus!4v1717966958866!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <p class="coverage-text">Proudly serving Hillsboro, Beaverton, Lake Oswego, Downtown Portland, Tigard, and surrounding communities in the Portland Metro Area.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-logo">
-                    <img src="images/logo-footer.png" alt="[Your Business Name] Logo">
-                    <p>Elevating vehicle care with unmatched convenience.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <p><i class="fas fa-phone-alt"></i> <a href="tel:[Your Phone Number]">[Your Phone Number]</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:[Your Email]">[Your Email]</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Portland Metro Area</p>
-                </div>
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <a href="[Your Facebook Link]" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="[Your Instagram Link]" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 [Your Business Name]. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- Mobile Navigation Toggle ---
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-
-            // Close nav when a link is clicked (for single-page scroll)
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                    }
-                });
-            });
-
-
-            // --- AI-Powered Vehicle Selector & Dynamic Pricing ---
-            const vehicleInput = document.getElementById('vehicle-input');
-            const vehicleSuggestions = document.getElementById('vehicle-suggestions');
-            const vehicleCondition = document.getElementById('vehicle-condition');
-            const selectedVehicleImg = document.getElementById('selected-vehicle-img');
-            const packagesDisplay = document.getElementById('packages-display');
-            const addOnsDisplay = document.getElementById('add-ons-display');
-            const finalPriceSpan = document.getElementById('final-price');
-            const durationValue = document.getElementById('duration-value');
-
-            // Dummy Vehicle Data (In a real app, this would come from a backend API or a large dataset)
-            const vehicleData = {
-                'tesla model 3': { type: 'Sedan', image: 'images/cars/tesla-model3.jpg', basePrice: { light: 150, moderate: 180, heavy: 250, 'pet-hair': 300 }, duration: '2.5 hours' },
-                'honda cr-v': { type: 'Small SUV', image: 'images/cars/honda-crv.jpg', basePrice: { light: 160, moderate: 190, heavy: 260, 'pet-hair': 310 }, duration: '3 hours' },
-                'ford f-150': { type: 'Truck', image: 'images/cars/ford-f150.jpg', basePrice: { light: 200, moderate: 240, heavy: 300, 'pet-hair': 380 }, duration: '3.5 hours' },
-                'bmw x5': { type: 'Mid-size SUV', image: 'images/cars/bmw-x5.jpg', basePrice: { light: 180, moderate: 220, heavy: 290, 'pet-hair': 350 }, duration: '3 hours' },
-                'toyota camry': { type: 'Sedan', image: 'images/cars/toyota-camry.jpg', basePrice: { light: 140, moderate: 170, heavy: 240, 'pet-hair': 290 }, duration: '2 hours' },
-                // Add more vehicles here
-            };
-
-            // Dummy Package Data (Prices are relative to basePrice)
-            const packages = [
-                { name: 'Sparkle', description: 'Exterior wash, interior vacuum & wipe down, window cleaning, tire shine.', multiplier: 1.0, durationFactor: 1.0 },
-                { name: 'Radiant', description: 'Sparkle + Wax sealant, interior wipe down, door jambs, light stain treatment.', multiplier: 1.3, durationFactor: 1.2 },
-                { name: 'Elite', description: 'Radiant + Clay bar, paint sealant, deep interior cleaning, leather conditioning.', multiplier: 1.7, durationFactor: 1.5 },
-                { name: 'Ceramic Pro', description: 'Elite + Professional Ceramic Coating application for long-term protection.', multiplier: 3.0, durationFactor: 2.0 }, // This would typically be a much higher, fixed price
-            ];
-
-            const addOns = [
-                { name: 'Headlight Restoration', price: 90 },
-                { name: 'Engine Bay Detail', price: 75 },
-                { name: 'Heavy Pet Hair Removal', price: 50 },
-                { name: 'Odor Removal', price: 60 },
-                // ... more add-ons
-            ];
-
-            let currentBasePrice = 0;
-            let selectedPackageMultiplier = 1.0; // Default to basic package multiplier
-            let selectedAddOnPrice = 0;
-            let estimatedDurationHours = 0;
-
-            function updateVehicleSuggestions() {
-                const input = vehicleInput.value.toLowerCase();
-                vehicleSuggestions.innerHTML = '';
-                if (input.length < 2) return; // Don't show suggestions for too short input
-
-                Object.keys(vehicleData).forEach(vehicleKey => {
-                    if (vehicleKey.includes(input)) {
-                        const option = document.createElement('option');
-                        option.value = vehicleKey.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '); // Capitalize
-                        vehicleSuggestions.appendChild(option);
-                    }
-                });
-            }
-
-            function updatePricingAndPackages() {
-                const selectedVehicleKey = vehicleInput.value.toLowerCase();
-                const condition = vehicleCondition.value;
-                const vehicle = vehicleData[selectedVehicleKey];
-
-                packagesDisplay.innerHTML = ''; // Clear previous packages
-
-                if (vehicle && condition) {
-                    currentBasePrice = vehicle.basePrice[condition];
-                    estimatedDurationHours = parseFloat(vehicle.duration.split(' ')[0]); // Get initial duration
-
-                    // Display packages
-                    packages.forEach(pkg => {
-                        const calculatedPrice = Math.round(currentBasePrice * pkg.multiplier);
-                        const packageCard = document.createElement('div');
-                        packageCard.classList.add('package-card');
-                        packageCard.innerHTML = `
-                            <h4>${pkg.name}</h4>
-                            <p class="price-range">$${calculatedPrice} - $${calculatedPrice + 50}</p> <ul>
-                                ${pkg.description.split(', ').map(item => `<li>${item}</li>`).join('')}
-                            </ul>
-                            <button class="select-package-btn" data-package="${pkg.name.toLowerCase().replace(/\s/g, '-')}" data-price="${calculatedPrice}" data-duration-factor="${pkg.durationFactor}">Select Package</button>
-                        `;
-                        packagesDisplay.appendChild(packageCard);
-                    });
-
-                    // Update vehicle image
-                    selectedVehicleImg.src = vehicle.image;
-                    selectedVehicleImg.alt = `Image of ${vehicle.type}`;
-
-                    // Add event listeners to new package buttons
-                    document.querySelectorAll('.select-package-btn').forEach(button => {
-                        button.addEventListener('click', (e) => {
-                            // Remove active class from all packages
-                            document.querySelectorAll('.package-card').forEach(card => card.classList.remove('selected'));
-                            // Add active class to the selected package
-                            e.target.closest('.package-card').classList.add('selected');
-
-                            selectedPackageMultiplier = packages.find(p => p.name.toLowerCase().replace(/\s/g, '-') === e.target.dataset.package).multiplier;
-                            estimatedDurationHours = parseFloat(vehicle.duration.split(' ')[0]) * parseFloat(e.target.dataset.durationFactor);
-                            calculateTotalPrice();
-                        });
-                    });
-
-                    // Initial selection of the first package as a default
-                    const firstPackageButton = document.querySelector('.select-package-btn');
-                    if (firstPackageButton) {
-                        firstPackageButton.click(); // Programmatically click to set initial selection
-                    }
-
-                } else {
-                    packagesDisplay.innerHTML = '<p>Please select your vehicle and its current condition.</p>';
-                    selectedVehicleImg.src = 'images/default-car.png'; // Reset to default
-                    currentBasePrice = 0;
-                    estimatedDurationHours = 0;
-                    calculateTotalPrice(); // Reset total price
-                }
-            }
-
-            function calculateTotalPrice() {
-                let total = currentBasePrice * selectedPackageMultiplier + selectedAddOnPrice;
-                finalPriceSpan.textContent = `$${total.toFixed(2)}`;
-                durationValue.textContent = `${estimatedDurationHours.toFixed(1)} hours`;
-            }
-
-            // Populate Add-ons
-            addOnsDisplay.innerHTML = addOns.map(addon => `
-                <label>
-                    <input type="checkbox" class="addon-checkbox" data-addon-price="${addon.price}"> ${addon.name} (+$${addon.price})
-                </label>
-            `).join('');
-
-            // Add-on change listener
-            document.querySelectorAll('.addon-checkbox').forEach(checkbox => {
-                checkbox.addEventListener('change', () => {
-                    selectedAddOnPrice = 0;
-                    document.querySelectorAll('.addon-checkbox:checked').forEach(checkedAddon => {
-                        selectedAddOnPrice += parseFloat(checkedAddon.dataset.addonPrice);
-                    });
-                    calculateTotalPrice();
-                });
-            });
-
-            vehicleInput.addEventListener('input', updateVehicleSuggestions);
-            vehicleInput.addEventListener('change', updatePricingAndPackages); // When user selects from datalist or types full
-            vehicleCondition.addEventListener('change', updatePricingAndPackages);
-
-            // Initial call to set up the form (if no vehicle is pre-selected)
-            updatePricingAndPackages();
-
-
-            // --- Before & After Slider (Basic Implementation) ---
-            // For a more advanced slider, consider libraries like Swiper.js or Slick Carousel
-            document.querySelectorAll('.before-after-slider').forEach(slider => {
-                const beforeImage = slider.querySelector('.before-image');
-                const afterImage = slider.querySelector('.after-image');
-                const sliderHandle = slider.querySelector('.slider-handle');
-
-                let isDragging = false;
-
-                function updateSlider(e) {
-                    const rect = slider.getBoundingClientRect();
-                    let x = e.clientX - rect.left; // Get mouse X relative to slider
-                    x = Math.max(0, Math.min(x, rect.width)); // Constrain x within slider bounds
-
-                    const percent = (x / rect.width) * 100;
-
-                    afterImage.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
-                    sliderHandle.style.left = `${percent}%`;
-                }
-
-                sliderHandle.addEventListener('mousedown', (e) => {
-                    isDragging = true;
-                    slider.classList.add('dragging');
-                });
-
-                document.addEventListener('mouseup', () => {
-                    isDragging = false;
-                    slider.classList.remove('dragging');
-                });
-
-                slider.addEventListener('mousemove', (e) => {
-                    if (!isDragging) return;
-                    updateSlider(e);
-                });
-
-                // For touch devices
-                sliderHandle.addEventListener('touchstart', (e) => {
-                    isDragging = true;
-                    slider.classList.add('dragging');
-                    e.preventDefault(); // Prevent scrolling
-                });
-
-                document.addEventListener('touchend', () => {
-                    isDragging = false;
-                    slider.classList.remove('dragging');
-                });
-
-                slider.addEventListener('touchmove', (e) => {
-                    if (!isDragging || !e.touches[0]) return;
-                    updateSlider(e.touches[0]);
-                });
-
-                // Initialize position
-                updateSlider({ clientX: slider.getBoundingClientRect().left + (slider.getBoundingClientRect().width / 2) });
-            });
-
-            // --- Booking System (Simplified) ---
-            const bookingDateInput = document.getElementById('booking-date');
-            const bookingTimeInput = document.getElementById('booking-time');
-            const bookNowFinalBtn = document.getElementById('book-now-final-btn');
-            const serviceLocationInput = document.getElementById('service-location');
-
-            // Set min date to today
-            const today = new Date();
-            const minDate = today.toISOString().split('T')[0];
-            bookingDateInput.setAttribute('min', minDate);
-
-            bookNowFinalBtn.addEventListener('click', () => {
-                const vehicle = vehicleInput.value;
-                const condition = vehicleCondition.value;
-                const selectedPackageElement = document.querySelector('.package-card.selected h4');
-                const selectedPackage = selectedPackageElement ? selectedPackageElement.textContent : 'No package selected';
-                const selectedAddons = Array.from(document.querySelectorAll('.addon-checkbox:checked')).map(cb => cb.parentNode.textContent.trim());
-                const date = bookingDateInput.value;
-                const time = bookingTimeInput.value;
-                const location = serviceLocationInput.value;
-                const finalPrice = finalPriceSpan.textContent;
-
-                if (!vehicle || !condition || !selectedPackageElement || !date || !time || !location) {
-                    alert('Please fill in all booking details: Vehicle, Condition, Package, Date, Time, and Location.');
-                    return;
-                }
-
-                // In a real application, you would send this data to a backend server
-                // for actual booking, payment processing, and confirmation.
-                // For a static GitHub Pages site, you might redirect to a "Thank You" page
-                // or open a mailto link, but actual booking won't happen here.
-
-                alert(`Booking Confirmed!
-                Vehicle: ${vehicle} (${condition})
-                Package: ${selectedPackage}
-                Add-ons: ${selectedAddons.length > 0 ? selectedAddons.join(', ') : 'None'}
-                Date: ${date}
-                Time: ${time}
-                Location: ${location}
-                Total: ${finalPrice}
-
-                Thank you for booking with [Your Business Name]! We will contact you shortly to confirm details.`);
-
-                // Redirect or clear form as needed
-                // window.location.href = 'thank-you.html';
-            });
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // --- Section visibility for animations (basic) ---
-            const sections = document.querySelectorAll('section');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.2 // Trigger when 20% of the section is visible
-            };
-
-            const sectionObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        // Optional: stop observing once it's active
-                        // observer.unobserve(entry.target);
-                    } else {
-                        // Optional: remove active class when out of view
-                        // entry.target.classList.remove('active');
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                section.classList.add('hidden-initially'); // Add a class to hide them with CSS
-                sectionObserver.observe(section);
-            });
-        });
-    </script>
-
-</body>
-</html>
+            font-
